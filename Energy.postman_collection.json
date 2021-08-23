@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "57bcb97f-c2ff-44a1-9d4a-6b7708db5e29",
+		"name": "Energy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Consumption",
+			"item": [
+				{
+					"name": "http://localhost:8080/consumption?meter_number=1714A6",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consumption?meter_number=1714A6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consumption"
+							],
+							"query": [
+								{
+									"key": "meter_number",
+									"value": "1714A6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/consumption?meter_number=1234",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consumption?meter_number=1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consumption"
+							],
+							"query": [
+								{
+									"key": "meter_number",
+									"value": "1234"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "http://localhost:8080/event import",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"import\",\r\n  \"meterNumber\": \"1714A6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/event push",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"push\",\r\n  \"meterNumber\": \"1714A6\",\r\n  \"activeEnergy\": 377,\r\n  \"injectedEnergy\": 47\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/event biling not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"billing\",\r\n  \"meterNo\": \"123\",\r\n  \"unit\": 0.42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/event billing cash",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"billing\",\r\n  \"meterNumber\": \"1714A6\",\r\n  \"unit\": 0.42\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/event",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"event"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Microgeneration",
+			"item": [
+				{
+					"name": "http://localhost:8080/microgeneration?meter_number=1714A6",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/microgeneration?meter_number=1714A6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"microgeneration"
+							],
+							"query": [
+								{
+									"key": "meter_number",
+									"value": "1714A6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
