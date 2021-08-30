@@ -29,11 +29,15 @@ Requirements:
    > - Git Tutorial at https://git-scm.com/book/pt-br/v2
 
 7. Edit the <PROJECT PATH>/energy/src/main/resources/application.yml file with the database settings:
-   >Example:
-   > - spring.data.mongodb.host=localhost
-   > - spring.data.mongodb.port=27017
-   > - spring.data.mongodb.database:energy
- 
+>Example:
+> ```bash
+>    spring:
+>      data:
+>      mongodb:
+>        host: localhost
+>        port: 27017
+>        database: energy
+> ``` 
 8. Run the command in the project <PROJECT PATH>/energy with the command:
 ```bash   
 ./gradlew bootJar
